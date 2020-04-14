@@ -18,7 +18,7 @@ import java.io.IOException;
 @Component
 public class Initializer implements ApplicationListener<Main.StageReadyEvent> {
 
-   @Value("classpath:/chart.fxml")
+   @Value("classpath:/basic.fxml")
     private Resource chartResource;
 
    private String title;
@@ -34,7 +34,6 @@ public class Initializer implements ApplicationListener<Main.StageReadyEvent> {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(chartResource.getURL());
             fxmlLoader.setControllerFactory(AClass -> applicationContext.getBean(AClass));
-
             Parent parent = fxmlLoader.load();
             Stage stage = event.getStage();
             stage.setScene(new Scene(parent, 800, 600));
