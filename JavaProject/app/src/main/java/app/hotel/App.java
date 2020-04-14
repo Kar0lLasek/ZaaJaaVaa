@@ -8,6 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class App {
     public static void main(String[] args) {
-        Application.launch(Main.class, args);
+        Application.launch(MainFX.class, args);
     }
 }

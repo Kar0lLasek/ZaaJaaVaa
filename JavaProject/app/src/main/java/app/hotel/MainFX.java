@@ -8,7 +8,7 @@ import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ConfigurableApplicationContext;
 
 
-public class Main extends Application {
+public class MainFX extends Application {
 
     private ConfigurableApplicationContext applicationContext;
 
