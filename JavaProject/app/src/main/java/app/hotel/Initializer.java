@@ -1,7 +1,5 @@
 package app.hotel;
 
-
-
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -18,11 +16,11 @@ import java.io.IOException;
 @Component
 public class Initializer implements ApplicationListener<Main.StageReadyEvent> {
 
-   @Value("classpath:/basic.fxml")
+    @Value("classpath:/basic.fxml")
     private Resource chartResource;
 
-   private String title;
-   private ApplicationContext applicationContext;
+    private String title;
+    private ApplicationContext applicationContext;
 
     public Initializer(@Value("${spring.javafx.title}") String title, ApplicationContext applicationContext) {
         this.title = title;
@@ -32,7 +30,6 @@ public class Initializer implements ApplicationListener<Main.StageReadyEvent> {
     @Override
     public void onApplicationEvent(Main.StageReadyEvent event) {
         try {
-            System.out.println("ASDASDasd");
             FXMLLoader fxmlLoader = new FXMLLoader(chartResource.getURL());
             fxmlLoader.setControllerFactory(AClass -> applicationContext.getBean(AClass));
             Parent parent = fxmlLoader.load();

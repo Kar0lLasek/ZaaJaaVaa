@@ -5,56 +5,55 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class BasicController {
 
-        public void switchAddUserWindow() {
+    public void switchAddUserWindow() {
 
-        }
+    }
 
-        public void switchAddProductWindow(){
+    public void switchAddProductWindow() {
 
-        }
-        public void deleteRoom(){
+    }
 
-        }
-        public void refreshAll(){
+    public void deleteRoom() {
 
-        }
-        public void switchModifyRoomWindow(){
+    }
 
-        }
-        public void createProductRaport(){
+    public void refreshAll() {
 
-        }
-        public void switchCreateOrder(){
+    }
 
-        }
-        public void deleteOrder(){
+    public void switchModifyRoomWindow() {
 
-        }
-        public void showOrderDetails(){
+    }
 
-        }
-        public void finishOrder(){
+    public void createProductRaport() {
 
-        }
-        public void setSelectedClient(){
+    }
 
-        }
-        public void switchAddClientWindow(){
+    public void setSelectedClient() {
 
-        }
-        public void deleteClient(){
+    }
 
-        }
-        public void switchModifyClientWindow(){
+    public void switchAddGuestWindow() {
 
-        }
-        public void deleteUser(){
+    }
 
-        }
-        public void switchModifyUserWindow(){
+    public void deleteGuest() {
 
-        }
-        public void paySalary(){
+    }
 
-        }
+    public void switchModifyGuestWindow() {
+
+    }
+
+    public void deleteUser() {
+
+    }
+
+    public void switchModifyUserWindow() {
+
+    }
+
+    public void paySalary() {
+
+    }
 }

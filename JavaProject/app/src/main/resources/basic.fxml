@@ -31,8 +31,8 @@
                                 <TextArea editable="false" layoutX="15.0" layoutY="56.0" prefHeight="620.0"
                                           prefWidth="1170.0"
                                           text="Aplikacja będzie pomocą dla pracowników hotelu (głównie pracujących na recepcji). Ma służyć do zarządzania rezerwacjami, opłacania ich oraz generowania raportów np. tygodniowych, miesięcznych. &#10;Przedmiot: Zaawansowane zagadnienia programowania w języku Java.
-                                                &#10;&#10;Skład zespołu:&#10;
-Goleniewski Michał&#10;Grela Radosław&#10;Lasek Karol&#10;Szafran Marek&#10;Wąchała Jakub&#10;&#10;
+                                                &#10;&#10;Skład zespołu:
+&#10;Goleniewski Michał&#10;Grela Radosław&#10;Lasek Karol&#10;Szafran Marek&#10;Wąchała Jakub&#10;&#10;
 Utrzymywanie kodu: Git, Travis / Jenkins&#10;
 Wykorzystany framework: Spring&#10;
 Testowanie kodu: testy jednostkowe / integracyjne&#10;
@@ -94,30 +94,30 @@ Spis głównych funkcjonalności:&#10;
                         </AnchorPane>
                     </content>
                 </Tab>
-                <Tab fx:id="clients" text="Clients">
+                <Tab fx:id="guests" text="Guests">
                     <content>
                         <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                             <children>
-                                <TableView fx:id="tableViewClients" layoutX="14.0" layoutY="15.0"
+                                <TableView fx:id="tableViewGuests" layoutX="14.0" layoutY="15.0"
                                            onMouseClicked="#setSelectedClient" prefHeight="660.0" prefWidth="1170.0">
                                     <columns>
-                                        <TableColumn fx:id="columnClientId" prefWidth="75.0" text="ID"/>
-                                        <TableColumn fx:id="columnClientName" prefWidth="252.0" text="Name"/>
-                                        <TableColumn fx:id="ColumnClientStatus" prefWidth="110.0" text="State"/>
-                                        <TableColumn fx:id="tableColumnBannedClient" prefWidth="62.0" text="Banned"/>
+                                        <TableColumn fx:id="columnGuestId" prefWidth="75.0" text="ID"/>
+                                        <TableColumn fx:id="columnGuestName" prefWidth="252.0" text="Name"/>
+                                        <TableColumn fx:id="ColumnGuestStatus" prefWidth="110.0" text="State"/>
+                                        <TableColumn fx:id="tableColumnBannedGuest" prefWidth="62.0" text="Banned"/>
                                     </columns>
                                 </TableView>
                                 <Button layoutX="1200.0" layoutY="15.0" mnemonicParsing="false"
-                                        onAction="#switchAddClientWindow" prefHeight="70.0" prefWidth="70.0"
+                                        onAction="#switchAddGuestWindow" prefHeight="70.0" prefWidth="70.0"
                                         style="-fx-background-color: #3DCC91;" text="Add" textFill="#202b33"/>
                                 <Button layoutX="1200.0" layoutY="175.0" mnemonicParsing="false"
-                                        onAction="#deleteClient" prefHeight="70.0" prefWidth="70.0"
+                                        onAction="#deleteGuest" prefHeight="70.0" prefWidth="70.0"
                                         style="-fx-background-color: #FF7373;" text="Delete" textFill="#202b33"/>
                                 <Button layoutX="1200.0" layoutY="255.0" mnemonicParsing="false" onAction="#refreshAll"
                                         prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #48AFF0;"
                                         text="Refresh" textFill="#202b33"/>
                                 <Button layoutX="1200.0" layoutY="95.0" mnemonicParsing="false"
-                                        onAction="#switchModifyClientWindow" prefHeight="70.0" prefWidth="70.0"
+                                        onAction="#switchModifyGuestWindow" prefHeight="70.0" prefWidth="70.0"
                                         style="-fx-background-color: #FFC940;" text="Modify" textFill="#202b33"/>
                             </children>
                         </AnchorPane>
