@@ -32,11 +32,12 @@ public class Initializer implements ApplicationListener<Main.StageReadyEvent> {
     @Override
     public void onApplicationEvent(Main.StageReadyEvent event) {
         try {
+            System.out.println("ASDASDasd");
             FXMLLoader fxmlLoader = new FXMLLoader(chartResource.getURL());
             fxmlLoader.setControllerFactory(AClass -> applicationContext.getBean(AClass));
             Parent parent = fxmlLoader.load();
             Stage stage = event.getStage();
-            stage.setScene(new Scene(parent, 800, 600));
+            stage.setScene(new Scene(parent, 1280, 720));
             stage.setTitle(title);
             stage.show();
         } catch (IOException e) {

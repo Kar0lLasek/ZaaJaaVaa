@@ -2,6 +2,9 @@ package app.hotel;
 
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ApplicationEvent;
@@ -23,7 +26,7 @@ public class Main extends Application {
     }
 
     @Override
-    public void stop()  {
+    public void stop() {
         applicationContext.close();
         Platform.exit();
     }
@@ -31,6 +34,7 @@ public class Main extends Application {
     static class StageReadyEvent extends ApplicationEvent {
         public StageReadyEvent(Stage primaryStage) {
             super(primaryStage);
+            System.out.println("start2");
         }
 
         public Stage getStage() {
