@@ -1,4 +1,4 @@
-package app.hotel.controllers;
+package app.hotel.controller;
 
 import org.springframework.stereotype.Controller;
 

@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 
 
-<VBox xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.hotel.controllers.BasicController">
+<VBox xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.hotel.controller.BasicController">
    <children>
       <SplitPane prefHeight="200.0" prefWidth="200.0" />
    </children>
