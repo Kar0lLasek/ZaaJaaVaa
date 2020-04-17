@@ -1,7 +1,7 @@
 package app.hotel.controller;
 
-import app.hotel.entities.Guest;
-import app.hotel.repositories.GuestRepository;
+import app.database.entities.Guest;
+import app.database.repositories.GuestRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
