@@ -15,21 +15,21 @@
 <?import javafx.scene.control.TableColumn?>
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1"
+            prefHeight="720.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/11.0.1"
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.hotel.controllers.BasicController">
     <children>
-        <TabPane id="MainView" layoutX="-2.0" prefHeight="720.0" prefWidth="1280.0"
+        <TabPane id="MainView" layoutX="-2.0" prefHeight="720.0" prefWidth="920.0"
                  style="-fx-background-color: #F5F8FA;" tabClosingPolicy="UNAVAILABLE">
             <tabs>
-                <Tab text="Main">
+                <Tab text="Strona startowa">
                     <content>
-                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1280.0">
+                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="920.0">
                             <children>
 
                                 <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0"
                                       wrappingWidth="297.357421875"/>
-                                <TextArea editable="false" layoutX="15.0" layoutY="56.0" prefHeight="620.0"
-                                          prefWidth="1170.0"
+                                <TextArea editable="false" layoutX="15.0" layoutY="15.0" prefHeight="661.0"
+                                          prefWidth="890.0"
                                           text="Aplikacja będzie pomocą dla pracowników hotelu (głównie pracujących na recepcji). Ma służyć do zarządzania rezerwacjami, opłacania ich oraz generowania raportów np. tygodniowych, miesięcznych. &#10;Przedmiot: Zaawansowane zagadnienia programowania w języku Java.
                                                 &#10;&#10;Skład zespołu:
 &#10;Goleniewski Michał&#10;Grela Radosław&#10;Lasek Karol&#10;Szafran Marek&#10;Wąchała Jakub&#10;&#10;
@@ -52,108 +52,181 @@ Spis głównych funkcjonalności:&#10;
 10. Generowanie raportów z danych okresów czasowych&#10;
 11. Zarządzanie klientami i przyznawanie zniżek klienckich&#10; "
                                           wrapText="true"/>
-                                <Label layoutX="15.0" layoutY="22.0" text="Login:"/>
-                                <TextField fx:id="loggedAs" editable="false" layoutX="55.0" layoutY="18.0"
-                                           prefHeight="25.0" prefWidth="460.0"/>
                             </children>
                         </AnchorPane>
                     </content>
                 </Tab>
-                <Tab fx:id="products" text="Rooms">
+                <Tab fx:id="rooms" text="Pokoje">
                     <content>
-                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="320.0" prefWidth="600.0">
+                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="320.0" prefWidth="920.0">
                             <children>
-                                <Button defaultButton="false" layoutX="1200.0" layoutY="15.0" maxWidth="-1.0"
-                                        minWidth="-1.0" mnemonicParsing="false" onAction="#switchAddProductWindow"
-                                        prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3DCC91;"
-                                        text="Add" textFill="#202b33"/>
-                                <Button layoutX="1200.0" layoutY="175.0" mnemonicParsing="false"
-                                        onAction="#deleteRoom" prefHeight="70.0" prefWidth="70.0"
-                                        style="-fx-background-color: #FF7373;" text="Delete" textFill="#202b33"/>
-                                <Button layoutX="1200.0" layoutY="255.0" mnemonicParsing="false" onAction="#refreshAll"
-                                        prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #48AFF0;"
-                                        text="Refresh" textFill="#202b33"/>
-                                <Button layoutX="1200.0" layoutY="95.0" mnemonicParsing="false"
-                                        onAction="#switchModifyRoomWindow" prefHeight="70.0" prefWidth="70.0"
-                                        style="-fx-background-color: #FFC940;" text="Modify" textFill="#202b33"/>
-                                <TableView fx:id="productsTable" editable="true" layoutX="15.0" layoutY="15.0"
-                                           prefHeight="660.0" prefWidth="1170.0">
+                                <Button defaultButton="false" layoutX="745.0" layoutY="15.0"
+                                        mnemonicParsing="false" onAction="#switchAddRoomWindow"
+                                        prefHeight="70.0" prefWidth="150.0"
+                                        style="-fx-background-color: #3DCC91; -fx-font-size: 12pt;"
+                                        text="Dodaj pokój"/>
+                                <Button layoutX="745.0" layoutY="95.0" mnemonicParsing="false"
+                                        onAction="#switchModifyRoomWindow" prefHeight="70.0" prefWidth="150.0"
+                                        style="-fx-background-color: #FFC940; -fx-font-size: 12pt;"
+                                        text="Modyfikuj pokój"/>
+                                <Button layoutX="745.0" layoutY="175.0" mnemonicParsing="false"
+                                        onAction="#deleteRoom" prefHeight="70.0" prefWidth="150.0"
+                                        style="-fx-background-color: #FF7373; -fx-font-size: 12pt;" text="Usuń pokój"
+                                />
+                                <Button layoutX="745.0" layoutY="255.0" mnemonicParsing="false" onAction="#refreshAll"
+                                        prefHeight="70.0" prefWidth="150.0"
+                                        style="-fx-background-color: #48AFF0; -fx-font-size: 12pt;"
+                                        text="Odśwież"/>
+                                <Button layoutX="745.0" layoutY="335.0" mnemonicParsing="false" prefHeight="70.0"
+                                        prefWidth="150.0" style="-fx-background-color: #ede4f0; -fx-font-size: 12pt;"
+                                        text="Raport" onAction="#generateRoomRaport"/>
+                                <TableView fx:id="roomsTable" editable="true" layoutX="15.0" layoutY="15.0"
+                                           prefHeight="660.0" prefWidth="700.0">
                                     <columns>
-                                        <TableColumn fx:id="roomId" minWidth="40.0" prefWidth="54.0"
+                                        <TableColumn fx:id="roomId" minWidth="40.0" prefWidth="150.0"
                                                      resizable="false" text="ID"/>
-                                        <TableColumn fx:id="roomPurchasePrice" minWidth="40.0" prefWidth="97.0"
-                                                     text="Purchase Price (per day)"/>
-                                        <TableColumn fx:id="roomState" minWidth="40.0" prefWidth="75.0"
-                                                     text="Room State"/>
+                                        <TableColumn fx:id="roomNumber" minWidth="40.0" prefWidth="100.0"
+                                                     resizable="false" text="Numer pokoju"/>
+                                        <TableColumn fx:id="roomCapacity" minWidth="40.0" prefWidth="100.0"
+                                                     resizable="false"
+                                                     text="Pojemność"/>
+                                        <TableColumn fx:id="roomPurchasePrice" minWidth="40.0" prefWidth="150.0"
+                                                     resizable="false"
+                                                     text="Cena pokoju (za dzień)"/>
+                                        <TableColumn fx:id="roomState" minWidth="40.0" prefWidth="200.0"
+                                                     resizable="false"
+                                                     text="Stan"/>
                                     </columns>
                                 </TableView>
-                                <Button layoutX="1200.0" layoutY="335.0" mnemonicParsing="false" prefHeight="70.0"
-                                        prefWidth="70.0" style="-fx-background-color: #48AFF0;" text="Raport"
-                                        onAction="#createProductRaport" textFill="#202b33"/>
                             </children>
                         </AnchorPane>
                     </content>
                 </Tab>
-                <Tab fx:id="guests" text="Guests">
+                <Tab fx:id="guests" text="Goście">
                     <content>
-                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="920.0">
                             <children>
-                                <TableView fx:id="tableViewGuests" layoutX="14.0" layoutY="15.0"
-                                           onMouseClicked="#setSelectedClient" prefHeight="660.0" prefWidth="1170.0">
+                                <TableView fx:id="guestsTable" layoutX="15.0" layoutY="15.0" prefHeight="660.0"
+                                           prefWidth="700.0">
                                     <columns>
-                                        <TableColumn fx:id="columnGuestId" prefWidth="75.0" text="ID"/>
-                                        <TableColumn fx:id="columnGuestName" prefWidth="252.0" text="Name"/>
-                                        <TableColumn fx:id="ColumnGuestStatus" prefWidth="110.0" text="State"/>
-                                        <TableColumn fx:id="tableColumnBannedGuest" prefWidth="62.0" text="Banned"/>
+                                        <TableColumn fx:id="guestId" prefWidth="150.0" resizable="false"
+                                                     text="ID"/>
+                                        <TableColumn fx:id="guestName" prefWidth="150.0" resizable="false"
+                                                     text="Imię"/>
+                                        <TableColumn fx:id="guestSurname" prefWidth="150.0" resizable="false"
+                                                     text="Nazwisko"/>
+                                        <TableColumn fx:id="guestPhonenumber" prefWidth="120.0" resizable="false"
+                                                     text="Numer telefonu"/>
+                                        <TableColumn fx:id="guestDiscount" prefWidth="130.0" resizable="false"
+                                                     text="Przyznana zniżka (%)"/>
                                     </columns>
                                 </TableView>
-                                <Button layoutX="1200.0" layoutY="15.0" mnemonicParsing="false"
-                                        onAction="#switchAddGuestWindow" prefHeight="70.0" prefWidth="70.0"
-                                        style="-fx-background-color: #3DCC91;" text="Add" textFill="#202b33"/>
-                                <Button layoutX="1200.0" layoutY="175.0" mnemonicParsing="false"
-                                        onAction="#deleteGuest" prefHeight="70.0" prefWidth="70.0"
-                                        style="-fx-background-color: #FF7373;" text="Delete" textFill="#202b33"/>
-                                <Button layoutX="1200.0" layoutY="255.0" mnemonicParsing="false" onAction="#refreshAll"
-                                        prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #48AFF0;"
-                                        text="Refresh" textFill="#202b33"/>
-                                <Button layoutX="1200.0" layoutY="95.0" mnemonicParsing="false"
-                                        onAction="#switchModifyGuestWindow" prefHeight="70.0" prefWidth="70.0"
-                                        style="-fx-background-color: #FFC940;" text="Modify" textFill="#202b33"/>
+                                <Button onAction="#switchAddGuestWindow" layoutX="745.0"
+                                        layoutY="15.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="150.0"
+                                        style="-fx-background-color: #3DCC91; -fx-font-size: 12pt;" text="Dodaj gościa"
+                                />
+                                <Button layoutX="745.0" layoutY="95.0" mnemonicParsing="false"
+                                        onAction="#switchModifyGuestWindow" prefHeight="70.0" prefWidth="150.0"
+                                        style="-fx-background-color: #FFC940; -fx-font-size: 12pt;"
+                                        text="Modyfikuj gościa"
+                                />
+                                <Button layoutX="745.0" layoutY="175.0" mnemonicParsing="false"
+                                        onAction="#deleteGuest" prefHeight="70.0" prefWidth="150.0"
+                                        style="-fx-background-color: #FF7373; -fx-font-size: 12pt;" text="Usuń gościa"
+                                />
+                                <Button layoutX="745.0" layoutY="255.0" mnemonicParsing="false" onAction="#refreshAll"
+                                        prefHeight="70.0" prefWidth="150.0"
+                                        style="-fx-background-color: #48AFF0; -fx-font-size: 12pt;"
+                                        text="Odśwież"
+                                />
                             </children>
                         </AnchorPane>
                     </content>
                 </Tab>
-                <Tab fx:id="users" text="Users">
+                <Tab fx:id="reservations" text="Rezerwacje">
                     <content>
-                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="920.0">
+                            <children>
+                                <TableView fx:id="reservationsTable" layoutX="15.0" layoutY="15.0" prefHeight="660.0"
+                                           prefWidth="700.0">
+                                    <columns>
+                                        <TableColumn fx:id="reservationId" resizable="false" prefWidth="150.0"
+                                                     text="ID"/>
+                                        <TableColumn fx:id="guestID" resizable="false" prefWidth="90.0"
+                                                     text="ID gościa"/>
+                                        <TableColumn fx:id="roomID" resizable="false" prefWidth="90.0"
+                                                     text="ID pokoju"/>
+                                        <TableColumn fx:id="startDate" resizable="false" prefWidth="135.0"
+                                                     text="Data rozpoczęcia"/>
+                                        <TableColumn fx:id="endDate" resizable="false" prefWidth="135.0"
+                                                     text="Data zakończenia"/>
+                                        <TableColumn fx:id="totalPrice" resizable="false" prefWidth="100.0"
+                                                     text="Cena całkowita"/>
+                                    </columns>
+                                </TableView>
+                                <Button layoutX="735.0" layoutY="15.0" mnemonicParsing="false"
+                                        onAction="#switchAddReservationWindow" prefHeight="70.0" prefWidth="170.0"
+                                        style="-fx-background-color: #3DCC91; -fx-font-size: 11pt;"
+                                        text="Utwórz rezerwację"
+                                />
+                                <Button layoutX="735.0" layoutY="95.0" mnemonicParsing="false"
+                                        onAction="#switchModifyReservationWindow" prefHeight="70.0" prefWidth="170.0"
+                                        style="-fx-background-color: #FFC940; -fx-font-size: 11pt;"
+                                        text="Modyfikuj rezerwację"
+                                />
+                                <Button layoutX="735.0" layoutY="175.0" mnemonicParsing="false"
+                                        onAction="#deleteReservation"
+                                        prefHeight="70.0" prefWidth="170.0"
+                                        style="-fx-background-color: #FF7373; -fx-font-size: 11pt;"
+                                        text="Usuń rezerwację"/>
+                                <Button layoutX="735.0" layoutY="255.0" mnemonicParsing="false" onAction="#refreshAll"
+                                        prefHeight="70.0" prefWidth="170.0"
+                                        style="-fx-background-color: #48AFF0; -fx-font-size: 11pt;"
+                                        text="Odśwież"/>
+                                <Button layoutX="735.0" layoutY="335.0" mnemonicParsing="false"
+                                        onAction="#generateReservationReport"
+                                        prefHeight="70.0" prefWidth="170.0"
+                                        style="-fx-background-color: #ede4f0; -fx-font-size: 11pt;"
+                                        text="Wygeneruj raport"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="users" text="Pracownicy">
+                    <content>
+                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="920.0">
                             <children>
                                 <TableView fx:id="usersTable" layoutX="15.0" layoutY="15.0" prefHeight="660.0"
-                                           prefWidth="1170.0">
+                                           prefWidth="700.0">
                                     <columns>
-                                        <TableColumn fx:id="userId" prefWidth="41.0" text="ID"/>
-                                        <TableColumn fx:id="userFirstName" prefWidth="87.0" text="First Name"/>
-                                        <TableColumn fx:id="userLastName" prefWidth="99.0" text="Last Name"/>
-                                        <TableColumn fx:id="userLogin" prefWidth="63.0" text="Login"/>
-                                        <TableColumn fx:id="userType" minWidth="0.0" prefWidth="64.0" text="Type"/>
-                                        <TableColumn fx:id="userSalary" prefWidth="68.0" text="Salary"/>
-                                        <TableColumn fx:id="userAddress" prefWidth="93.0" text="Address"/>
+                                        <TableColumn fx:id="userId" resizable="false" prefWidth="150.0" text="ID"/>
+                                        <TableColumn fx:id="userFirstName" resizable="false" prefWidth="150.0"
+                                                     text="Imię"/>
+                                        <TableColumn fx:id="userLastName" resizable="false" prefWidth="250.0"
+                                                     text="Nazwisko"/>
+                                        <TableColumn fx:id="userType" resizable="false" minWidth="150.0"
+                                                     prefWidth="64.0" text="Typ"/>
                                     </columns>
                                 </TableView>
-                                <Button layoutX="1200.0" layoutY="15.0" mnemonicParsing="false"
-                                        onAction="#switchAddUserWindow" prefHeight="70.0" prefWidth="70.0"
-                                        style="-fx-background-color: #3DCC91;" text="Add" textFill="#202b33"/>
-                                <Button layoutX="1200.0" layoutY="255.0" mnemonicParsing="false" onAction="#refreshAll"
-                                        prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #48AFF0;"
-                                        text="Refresh" textFill="#202b33"/>
-                                <Button layoutX="1200.0" layoutY="175.0" mnemonicParsing="false" onAction="#deleteUser"
-                                        prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #FF7373;"
-                                        text="Delete" textFill="#202b33"/>
-                                <Button layoutX="1200.0" layoutY="95.0" mnemonicParsing="false"
-                                        onAction="#switchModifyUserWindow" prefHeight="70.0" prefWidth="70.0"
-                                        style="-fx-background-color: #FFC940;" text="Modify" textFill="#202b33"/>
-                                <Button layoutX="1200.0" layoutY="600.0" mnemonicParsing="false" onAction="#paySalary"
-                                        prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3DCC91;"
-                                        text="Pay Sal." textFill="#202b33"/>
+                                <Button layoutX="735.0" layoutY="15.0" mnemonicParsing="false"
+                                        onAction="#switchAddUserWindow" prefHeight="70.0" prefWidth="170.0"
+                                        style="-fx-background-color: #3DCC91; -fx-font-size: 11pt;"
+                                        text="Dodaj pracownika"
+                                />
+                                <Button layoutX="735.0" layoutY="95.0" mnemonicParsing="false"
+                                        onAction="#switchModifyUserWindow" prefHeight="70.0" prefWidth="170.0"
+                                        style="-fx-background-color: #FFC940; -fx-font-size: 11pt;"
+                                        text="Modyfikuj pracownika"/>
+                                <Button layoutX="735.0" layoutY="175.0" mnemonicParsing="false" onAction="#deleteUser"
+                                        prefHeight="70.0" prefWidth="170.0"
+                                        style="-fx-background-color: #FF7373; -fx-font-size: 11pt;"
+                                        text="Usuń pracownika"/>
+                                <Button layoutX="735.0" layoutY="255.0" mnemonicParsing="false" onAction="#refreshAll"
+                                        prefHeight="70.0" prefWidth="170.0"
+                                        style="-fx-background-color: #48AFF0; -fx-font-size: 11pt;"
+                                        text="Odśwież"/>
+
+
                             </children>
                         </AnchorPane>
                     </content>

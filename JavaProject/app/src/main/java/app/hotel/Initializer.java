@@ -34,7 +34,7 @@ public class Initializer implements ApplicationListener<Main.StageReadyEvent> {
             fxmlLoader.setControllerFactory(AClass -> applicationContext.getBean(AClass));
             Parent parent = fxmlLoader.load();
             Stage stage = event.getStage();
-            stage.setScene(new Scene(parent, 1280, 720));
+            stage.setScene(new Scene(parent, 920, 720));
             stage.setTitle(title);
             stage.show();
         } catch (IOException e) {

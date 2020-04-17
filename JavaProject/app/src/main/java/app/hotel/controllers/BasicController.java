@@ -4,20 +4,8 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class BasicController {
-
-    public void switchAddUserWindow() {
-
-    }
-
-    public void switchAddProductWindow() {
-
-    }
-
-    public void deleteRoom() {
-
-    }
-
-    public void refreshAll() {
+    // ----rooms----
+    public void switchAddRoomWindow() {
 
     }
 
@@ -25,19 +13,16 @@ public class BasicController {
 
     }
 
-    public void createProductRaport() {
+    public void deleteRoom() {
 
     }
 
-    public void setSelectedClient() {
+    public void generateRoomRaport() {
 
     }
 
+    // ----guests----
     public void switchAddGuestWindow() {
-
-    }
-
-    public void deleteGuest() {
 
     }
 
@@ -45,7 +30,29 @@ public class BasicController {
 
     }
 
-    public void deleteUser() {
+    public void deleteGuest() {
+
+    }
+
+    // ---- reservations ----
+    public void switchAddReservationWindow() {
+
+    }
+
+    public void switchModifyReservationWindow() {
+
+    }
+
+    public void deleteReservation() {
+
+    }
+
+    public void generateReservationReport() {
+
+    }
+
+    // ---- users ----
+    public void switchAddUserWindow() {
 
     }
 
@@ -53,7 +60,14 @@ public class BasicController {
 
     }
 
-    public void paySalary() {
+    public void deleteUser() {
 
     }
+
+    // ---- other methods ----
+    public void refreshAll() {
+
+    }
+
+
 }
