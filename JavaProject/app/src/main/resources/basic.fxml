@@ -78,7 +78,7 @@ Spis głównych funkcjonalności:&#10;
                                         style="-fx-background-color: #48AFF0; -fx-font-size: 12pt;"
                                         text="Odśwież"/>
                                 <Button layoutX="745.0" layoutY="335.0" mnemonicParsing="false" prefHeight="70.0"
-                                        prefWidth="150.0" style="-fx-background-color: #ede4f0; -fx-font-size: 12pt;"
+                                        prefWidth="150.0" style="-fx-background-color: #c499cc; -fx-font-size: 12pt;"
                                         text="Raport" onAction="#generateRoomRaport"/>
                                 <TableView fx:id="roomsTable" editable="true" layoutX="15.0" layoutY="15.0"
                                            prefHeight="660.0" prefWidth="700.0">
@@ -186,7 +186,7 @@ Spis głównych funkcjonalności:&#10;
                                 <Button layoutX="735.0" layoutY="335.0" mnemonicParsing="false"
                                         onAction="#generateReservationReport"
                                         prefHeight="70.0" prefWidth="170.0"
-                                        style="-fx-background-color: #ede4f0; -fx-font-size: 11pt;"
+                                        style="-fx-background-color: #c499cc; -fx-font-size: 11pt;"
                                         text="Wygeneruj raport"/>
                             </children>
                         </AnchorPane>

@@ -2,14 +2,12 @@ package app.hotel.controllers;
 
 import app.hotel.Main;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.Tab;
 import org.springframework.stereotype.Controller;
 
-import java.io.IOException;
 import java.net.URL;
-import java.util.Optional;
+
+import static app.hotel.controllers.AuxiliaryController.changeScene;
 
 @Controller
 public class BasicController {
@@ -89,23 +87,12 @@ public class BasicController {
     // ----rooms----
     public void switchAddRoomWindow() {
         URL addRoomWindowLocation = Main.class.getResource("/" + "addRoomWindow.fxml");
-        try {
-            Main.setScene(addRoomWindowLocation, 460, 360);
-        } catch (IOException e) {
-            System.err.println(addRoomWindowLocation);
-            e.printStackTrace();
-        }
+        changeScene(addRoomWindowLocation, 460, 360);
     }
 
     public void switchModifyRoomWindow() {
         URL modifyRoomWindowLocation = Main.class.getResource("/" + "modifyRoomWindow.fxml");
-        try {
-            Main.setScene(modifyRoomWindowLocation, 460, 360);
-        } catch (IOException e) {
-            System.err.println(modifyRoomWindowLocation);
-            e.printStackTrace();
-        }
-
+        changeScene(modifyRoomWindowLocation, 460, 360);
     }
 
     public void deleteRoom() {
@@ -119,22 +106,12 @@ public class BasicController {
     // ----guests----
     public void switchAddGuestWindow() {
         URL addGuestWindowLocation = Main.class.getResource("/" + "addGuestWindow.fxml");
-        try {
-            Main.setScene(addGuestWindowLocation, 460, 360);
-        } catch (IOException e) {
-            System.err.println(addGuestWindowLocation);
-            e.printStackTrace();
-        }
+        changeScene(addGuestWindowLocation, 460, 360);
     }
 
     public void switchModifyGuestWindow() {
         URL modifyGuestWindowLocation = Main.class.getResource("/" + "modifyGuestWindow.fxml");
-        try {
-            Main.setScene(modifyGuestWindowLocation, 460, 360);
-        } catch (IOException e) {
-            System.err.println(modifyGuestWindowLocation);
-            e.printStackTrace();
-        }
+        changeScene(modifyGuestWindowLocation, 460, 360);
     }
 
     public void deleteGuest() {
@@ -143,32 +120,37 @@ public class BasicController {
 
     // ---- reservations ----
     public void switchAddReservationWindow() {
-
+        URL addReservationWindowLocation = Main.class.getResource("/" + "addReservationWindow.fxml");
+        changeScene(addReservationWindowLocation, 460, 360);
     }
 
     public void switchModifyReservationWindow() {
-
+        URL modifyReservationWindowLocation = Main.class.getResource("/" + "modifyReservationWindow.fxml");
+        changeScene(modifyReservationWindowLocation, 460, 360);
     }
 
     public void deleteReservation() {
-
+        System.out.println("delete reservation");
     }
 
     public void generateReservationReport() {
-
+        URL reservationReportWindowLocation = Main.class.getResource("/" + "reservationReportWindow.fxml");
+        changeScene(reservationReportWindowLocation, 460, 360);
     }
 
     // ---- users ----
     public void switchAddUserWindow() {
-
+        URL addUserWindowLocation = Main.class.getResource("/" + "addUserWindow.fxml");
+        changeScene(addUserWindowLocation, 460, 360);
     }
 
     public void switchModifyUserWindow() {
-
+        URL modifyUserWindowLocation = Main.class.getResource("/" + "modifyUserWindow.fxml");
+        changeScene(modifyUserWindowLocation, 460, 360);
     }
 
     public void deleteUser() {
-
+        System.out.println("Delete user");
     }
 
     // ---- other methods ----

@@ -1,46 +1,40 @@
 package app.hotel.controllers;
 
-import app.hotel.Main;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
-import java.io.IOException;
-import java.net.URL;
 
 public class GuestController {
 
     @FXML
-    private TextField clientName;
+    private TextField guestName;
     @FXML
-    private TextField clientSurname;
+    private TextField guestSurname;
     @FXML
-    private TextField clientPhonenumber;
+    private TextField guestPhonenumber;
 
 
-    public void addClient() {
+    public void addGuest() {
         System.out.println("add guest");
-        System.out.println(clientName.getText());
-        System.out.println(clientSurname.getText());
-        System.out.println(clientPhonenumber.getText());
+        printTextFields();
         switchMainWindow();
     }
 
     public void modifyGuest() {
         System.out.println("modify guest");
-        System.out.println(clientName.getText());
-        System.out.println(clientSurname.getText());
-        System.out.println(clientPhonenumber.getText());
+        printTextFields();
         switchMainWindow();
     }
 
-    public void switchMainWindow() {
-        System.out.println("Powrót do main z GuestController");
-        URL mainWindowLocation = Main.class.getResource("/" + "basic.fxml");
-        try {
-            Main.setScene(mainWindowLocation, 0, 0);
-        } catch (IOException e) {
-            System.err.println(mainWindowLocation);
-            e.printStackTrace();
-        }
+    public void printTextFields() {
+        System.out.println(guestName.getText());
+        System.out.println(guestSurname.getText());
+        System.out.println(guestPhonenumber.getText());
     }
+
+    public void switchMainWindow() {
+        AuxiliaryController.switchMainWindow();
+    }
+
+
 }
