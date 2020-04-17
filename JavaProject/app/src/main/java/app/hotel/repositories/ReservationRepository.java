@@ -1,6 +1,6 @@
 package app.hotel.repositories;
 
-import app.hotel.models.Reservation;
+import app.hotel.entities.Reservation;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package app.hotel.models;
+package app.hotel.entities;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

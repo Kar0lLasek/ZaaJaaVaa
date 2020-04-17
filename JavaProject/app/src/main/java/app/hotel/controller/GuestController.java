@@ -1,9 +1,7 @@
 package app.hotel.controller;
 
-import app.hotel.models.Guest;
+import app.hotel.entities.Guest;
 import app.hotel.repositories.GuestRepository;
-import app.hotel.repositories.ReservationRepository;
-import app.hotel.repositories.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
