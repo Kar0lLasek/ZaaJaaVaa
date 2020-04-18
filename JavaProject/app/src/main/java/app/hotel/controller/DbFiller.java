@@ -18,7 +18,7 @@ public class DbFiller implements CommandLineRunner {
     public void run(String... args) throws Exception {
         Guest guest1 = new Guest(
                 "12345649638",
-                "Marek",
+                "U MNIE DZIALA",
                 "Szafran",
                 123456789
         );
