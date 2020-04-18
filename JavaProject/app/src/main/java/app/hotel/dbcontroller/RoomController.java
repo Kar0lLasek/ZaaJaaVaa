@@ -1,4 +1,4 @@
-package app.hotel.dbcontrollers;
+package app.hotel.dbcontroller;
 
 import app.database.entities.Room;
 import app.database.repositories.RoomRepository;

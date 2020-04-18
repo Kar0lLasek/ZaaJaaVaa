@@ -1,7 +1,8 @@
-package app.hotel.dbcontrollers;
+package app.hotel.dbcontroller;
 
 import app.database.entities.Guest;
 import app.database.repositories.GuestRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,16 +12,13 @@ import java.util.Optional;
 @RequestMapping(value = "/guests")
 public class GuestController {
 
+    @Autowired
     private GuestRepository guestRepository;
 
-    public GuestController(GuestRepository guestRepository) {
-        this.guestRepository = guestRepository;
-    }
 
     @GetMapping("/allGuests")
-    public List<Guest> getAllGuests(){
-        List<Guest> guests = this.guestRepository.findAll();
-        return guests;
+    public List<Guest> getAllGuests() {
+        return guestRepository.findAll();
     }
 
     @GetMapping("/guest/{id}")
