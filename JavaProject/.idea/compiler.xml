@@ -25,9 +25,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="hotel" target="13" />
-      <module name="hotel (1)" target="1.5" />
       <module name="hotel-app" target="13" />
-      <module name="hotel-app (1) (hotel-app)" target="13" />
       <module name="server" target="13" />
     </bytecodeTargetLevel>
   </component>
@@ -35,7 +33,6 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="hotel" options="-parameters" />
       <module name="hotel-app" options="-parameters" />
-      <module name="hotel-app (1) (hotel-app)" options="-parameters" />
       <module name="server" options="-parameters" />
     </option>
   </component>
