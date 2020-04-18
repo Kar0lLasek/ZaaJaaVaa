@@ -1,4 +1,4 @@
-package app.hotel.controller;
+package app.hotel.controllers;
 
 import app.hotel.Main;
 import javafx.fxml.FXML;

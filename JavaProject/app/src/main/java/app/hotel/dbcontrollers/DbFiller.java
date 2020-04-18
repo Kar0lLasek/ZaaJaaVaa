@@ -1,4 +1,4 @@
-package app.hotel.controller;
+package app.hotel.dbcontrollers;
 
 import app.database.entities.Guest;
 import app.database.repositories.GuestRepository;
