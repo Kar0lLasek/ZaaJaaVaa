@@ -17,7 +17,7 @@ public class RoomController {
     }
 
     @GetMapping("/allRooms")
-    public List<Room> getAllRooms(){
+    public List<Room> getAllRooms() {
         List<Room> rooms = this.roomRepository.findAll();
         return rooms;
     }
@@ -29,17 +29,17 @@ public class RoomController {
     }
 
     @PutMapping
-    public  void insertRoom(@RequestBody Room room){
+    public void insertRoom(@RequestBody Room room) {
         this.roomRepository.insert(room);
     }
 
     @PostMapping
-    public void updateRoom(@RequestBody Room room){
+    public void updateRoom(@RequestBody Room room) {
         this.roomRepository.save(room);
     }
 
     @DeleteMapping
-    public void deleteRoom(@RequestBody Room room){
+    public void deleteRoom(@RequestBody Room room) {
         this.roomRepository.delete(room);
     }
 

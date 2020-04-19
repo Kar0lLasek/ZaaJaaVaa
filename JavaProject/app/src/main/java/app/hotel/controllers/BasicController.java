@@ -1,8 +1,15 @@
 package app.hotel.controllers;
 
+import app.database.entities.Guest;
+import app.database.entities.Reservation;
+import app.database.entities.Room;
+import app.database.entities.User;
 import app.hotel.Main;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.Tab;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import org.springframework.stereotype.Controller;
 
 import java.net.URL;
@@ -12,11 +19,12 @@ import static app.hotel.controllers.AuxiliaryController.changeScene;
 @Controller
 public class BasicController {
 
+
     @FXML
     private Tab rooms, guests, reservations, users;
     @FXML
     private URL location;
-    /* jak bedzie polaczone z modelem
+
     @FXML
     private TableView<Room> roomsTable;
 
@@ -79,8 +87,8 @@ public class BasicController {
         return usersTable.getSelectionModel().getSelectedItem();
     }
 
-
-                                                                */
+    //TODO
+    //private ObservableList<Guest> guestsList = FXCollections.observableList(guestController.getAllGuests());
 
 
     // ---- methods ------------------------------------------------------------------------------------------------
@@ -155,6 +163,25 @@ public class BasicController {
 
     // ---- other methods ----
     public void refreshAll() {
+
+        guestId.setCellValueFactory(guestStringCellDataFeatures ->
+                new SimpleStringProperty(guestStringCellDataFeatures.getValue().getPidn())
+        );
+
+        guestName.setCellValueFactory(guestStringCellDataFeatures ->
+                new SimpleStringProperty(guestStringCellDataFeatures.getValue().getName())
+        );
+
+        guestSurname.setCellValueFactory(guestStringCellDataFeatures ->
+                new SimpleStringProperty(guestStringCellDataFeatures.getValue().getSurnamme())
+        );
+
+        guestPhonenumber.setCellValueFactory(guestStringCellDataFeatures ->
+                new SimpleStringProperty(String.valueOf(guestStringCellDataFeatures.getValue().getPhoneNumber())));
+        //TODO discount
+        guestDiscount.setCellValueFactory(guestStringCellDataFeatures ->
+                new SimpleStringProperty(String.valueOf(guestStringCellDataFeatures.getValue().getPhoneNumber())));
+        //guestsTable.setItems(guestsList);
         System.out.println("Odśwież button");
     }
 

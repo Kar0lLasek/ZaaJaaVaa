@@ -18,7 +18,7 @@ public class ReservationController {
     }
 
     @GetMapping("/allReservations")
-    public List<Reservation> getAllReservations(){
+    public List<Reservation> getAllReservations() {
         List<Reservation> reservations = this.reservationRepository.findAll();
         return reservations;
     }
@@ -30,17 +30,17 @@ public class ReservationController {
     }
 
     @PutMapping
-    public  void insertReservation(@RequestBody Reservation reservation){
+    public void insertReservation(@RequestBody Reservation reservation) {
         this.reservationRepository.insert(reservation);
     }
 
     @PostMapping
-    public void updateReservation(@RequestBody Reservation reservation){
+    public void updateReservation(@RequestBody Reservation reservation) {
         this.reservationRepository.save(reservation);
     }
 
     @DeleteMapping
-    public void deleteReservation(@RequestBody Reservation reservation){
+    public void deleteReservation(@RequestBody Reservation reservation) {
         this.reservationRepository.delete(reservation);
     }
 }

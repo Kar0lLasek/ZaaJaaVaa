@@ -18,29 +18,27 @@ public class UserController {
     }
 
     @GetMapping("/allUsers")
-    public List<User> getAllUsers(){
-        List<User> users = this.userRepository.findAll();
-        return users;
+    public List<User> getAllUsers() {
+        return this.userRepository.findAll();
     }
 
     @GetMapping("/user/{id}")
     public Optional<User> getUserById(@PathVariable("id") String id) {
-        Optional<User> user = this.userRepository.findById(id);
-        return user;
+        return this.userRepository.findById(id);
     }
 
     @PutMapping
-    public  void insertUser(@RequestBody User user){
+    public void insertUser(@RequestBody User user) {
         this.userRepository.insert(user);
     }
 
     @PostMapping
-    public void updateUser(@RequestBody User user){
+    public void updateUser(@RequestBody User user) {
         this.userRepository.save(user);
     }
 
     @DeleteMapping
-    public void deleteUser(@RequestBody User user){
+    public void deleteUser(@RequestBody User user) {
         this.userRepository.delete(user);
     }
 }

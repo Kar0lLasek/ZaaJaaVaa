@@ -12,8 +12,11 @@ import java.util.Optional;
 @RequestMapping(value = "/guests")
 public class GuestController {
 
-    @Autowired
-    private GuestRepository guestRepository;
+    private final GuestRepository guestRepository;
+
+    public GuestController(GuestRepository guestRepository) {
+        this.guestRepository = guestRepository;
+    }
 
 
     @GetMapping("/allGuests")
@@ -23,22 +26,21 @@ public class GuestController {
 
     @GetMapping("/guest/{id}")
     public Optional<Guest> getGuestById(@PathVariable("id") String id) {
-        Optional<Guest> guest = this.guestRepository.findById(id);
-        return guest;
+        return this.guestRepository.findById(id);
     }
 
     @PutMapping
-    public  void insertGuest(@RequestBody Guest guest){
+    public void insertGuest(@RequestBody Guest guest) {
         this.guestRepository.insert(guest);
     }
 
     @PostMapping
-    public void updateGuest(@RequestBody Guest guest){
+    public void updateGuest(@RequestBody Guest guest) {
         this.guestRepository.save(guest);
     }
 
     @DeleteMapping
-    public void deleteGuest(@RequestBody Guest guest){
+    public void deleteGuest(@RequestBody Guest guest) {
         this.guestRepository.delete(guest);
     }
 
