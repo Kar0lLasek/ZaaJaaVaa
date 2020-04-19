@@ -65,7 +65,8 @@ public class BasicController {
             roomID,
             startDate,
             endDate,
-            totalPrice;
+            totalPrice,
+            isPayed;
 
     @FXML
     public Reservation getSelectedReservation() {
@@ -146,6 +147,11 @@ public class BasicController {
         changeScene(reservationReportWindowLocation, 460, 360);
     }
 
+    public void paidWindow() {
+        URL addPayWindowLocation = Main.class.getResource("/" + "addPayWindow.fxml");
+        changeScene(addPayWindowLocation, 460, 360);
+    }
+
     // ---- users ----
     public void switchAddUserWindow() {
         URL addUserWindowLocation = Main.class.getResource("/" + "addUserWindow.fxml");
@@ -173,7 +179,7 @@ public class BasicController {
         );
 
         guestSurname.setCellValueFactory(guestStringCellDataFeatures ->
-                new SimpleStringProperty(guestStringCellDataFeatures.getValue().getSurname())
+                new SimpleStringProperty(guestStringCellDataFeatures.getValue().getSurnamme())
         );
 
         guestPhonenumber.setCellValueFactory(guestStringCellDataFeatures ->
