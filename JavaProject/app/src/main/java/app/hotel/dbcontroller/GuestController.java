@@ -18,7 +18,6 @@ public class GuestController {
         this.guestRepository = guestRepository;
     }
 
-
     @GetMapping("/allGuests")
     public List<Guest> getAllGuests() {
         return guestRepository.findAll();
@@ -29,12 +28,12 @@ public class GuestController {
         return this.guestRepository.findById(id);
     }
 
-    @PutMapping
+    @PostMapping
     public void insertGuest(@RequestBody Guest guest) {
         this.guestRepository.insert(guest);
     }
 
-    @PostMapping
+    @PutMapping
     public void updateGuest(@RequestBody Guest guest) {
         this.guestRepository.save(guest);
     }

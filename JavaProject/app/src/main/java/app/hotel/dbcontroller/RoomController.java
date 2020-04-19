@@ -28,12 +28,12 @@ public class RoomController {
         return room;
     }
 
-    @PutMapping
+    @PostMapping
     public void insertRoom(@RequestBody Room room) {
         this.roomRepository.insert(room);
     }
 
-    @PostMapping
+    @PutMapping
     public void updateRoom(@RequestBody Room room) {
         this.roomRepository.save(room);
     }

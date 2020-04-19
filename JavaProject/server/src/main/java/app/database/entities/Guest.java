@@ -14,16 +14,16 @@ public class Guest {
     @Id
     private String pidn;
     private String name;
-    private String surnamme;
+    private String surname;
     private int phoneNumber;
 
     public Guest() {
     }
 
-    public Guest(String pidn, String name, String surnamme, int phoneNumber) {
+    public Guest(String pidn, String name, String surname, int phoneNumber) {
         this.pidn = pidn;
         this.name = name;
-        this.surnamme = surnamme;
+        this.surname = surname;
         this.phoneNumber = phoneNumber;
     }
 

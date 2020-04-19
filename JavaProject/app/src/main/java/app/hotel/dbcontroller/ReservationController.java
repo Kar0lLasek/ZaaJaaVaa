@@ -29,12 +29,12 @@ public class ReservationController {
         return reservation;
     }
 
-    @PutMapping
+    @PostMapping
     public void insertReservation(@RequestBody Reservation reservation) {
         this.reservationRepository.insert(reservation);
     }
 
-    @PostMapping
+    @PutMapping
     public void updateReservation(@RequestBody Reservation reservation) {
         this.reservationRepository.save(reservation);
     }

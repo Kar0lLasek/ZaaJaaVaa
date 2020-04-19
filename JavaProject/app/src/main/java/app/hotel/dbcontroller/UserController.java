@@ -27,12 +27,12 @@ public class UserController {
         return this.userRepository.findById(id);
     }
 
-    @PutMapping
+    @PostMapping
     public void insertUser(@RequestBody User user) {
         this.userRepository.insert(user);
     }
 
-    @PostMapping
+    @PutMapping
     public void updateUser(@RequestBody User user) {
         this.userRepository.save(user);
     }
