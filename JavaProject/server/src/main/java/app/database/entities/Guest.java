@@ -1,7 +1,12 @@
 package app.database.entities;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+@Setter
+@Getter
 
 @Document
 public class Guest {
@@ -22,35 +27,5 @@ public class Guest {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getPidn() {
-        return pidn;
-    }
 
-    public void setPidn(String pidn) {
-        this.pidn = pidn;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSurnamme() {
-        return surnamme;
-    }
-
-    public void setSurnamme(String surnamme) {
-        this.surnamme = surnamme;
-    }
-
-    public int getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(int phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
 }
